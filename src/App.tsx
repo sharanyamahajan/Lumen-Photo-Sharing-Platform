@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { ScreenNavigator } from './components/ScreenNavigator';
 
 import { SignInScreen } from './screens/SignInScreen';
 import { AdminDashboardScreen } from './screens/AdminDashboardScreen';
@@ -57,7 +56,6 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
-          <ScreenNavigator />
         </div>
       </BrowserRouter>
     </AppProvider>

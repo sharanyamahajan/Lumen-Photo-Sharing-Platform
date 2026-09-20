@@ -2,22 +2,25 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { UserRole } from '../types';
+import * as api from '../services/api';
 import { Lock, ArrowRight, ShieldCheck, Camera } from 'lucide-react';
 
 export const SignInScreen: React.FC = () => {
   const navigate = useNavigate();
   const { switchRole, showNotification } = useApp();
   const [role, setRole] = useState<UserRole>('admin');
-  const [email, setEmail] = useState('j.thorne@lumen-archive.ch');
-  const [password, setPassword] = useState('••••••••••••');
+  const [email, setEmail] = useState('admin@lumen.ch');
+  const [password, setPassword] = useState('AdminSecret123!');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleRoleTabChange = (selectedRole: UserRole) => {
     setRole(selectedRole);
     if (selectedRole === 'admin') {
-      setEmail('j.thorne@lumen-archive.ch');
+      setEmail('admin@lumen.ch');
+      setPassword('AdminSecret123!');
     } else {
-      setEmail('elena.rostova@phototeam.com');
+      setEmail('team@lumen.ch');
+      setPassword('TeamSecret123!');
     }
   };
 
